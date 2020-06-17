@@ -5,6 +5,7 @@ from RSS.views import show
 from library.views import list_book
 urlpatterns = [
     #    path('admin/', admin.site.urls),
+    url(r'', show),
     url(r'^index/', show),
     url(r'^library/', list_book),
 ]
