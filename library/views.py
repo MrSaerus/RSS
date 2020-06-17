@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from library.models import library
 
-# Create your views here.
+def list_book(request):
+    books = library.objects.all()
+    return render(request, 'face.html', locals())
