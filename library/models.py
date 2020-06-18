@@ -1,9 +1,9 @@
 from django.db import models
 
 # Create your models here.
-class library(models.Model):
+class book_library(models.Model):
     class Meta():
-        db_table = 'library'
+        db_table = 'book_library'
     id = models.AutoField(primary_key=True)
     id_site = models.CharField(max_length=50)
     id_book = models.CharField(max_length=50)

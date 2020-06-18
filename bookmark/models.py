@@ -1,8 +1,8 @@
 from django.db import models
 
-class custom_mark(models.Model):
+class book_custom_mark(models.Model):
     class Meta():
-        db_table = 'custom_mark'
+        db_table = 'book_custom_mark'
     id = models.AutoField(primary_key=True)
     site = models.TextField()
     url_mark = models.TextField()
@@ -22,9 +22,9 @@ class book_mark(models.Model):
     id_status = models.CharField(max_length=50)
     translate = models.CharField(max_length=50)
 
-class status_mark(models.Model):
+class book_status_mark(models.Model):
     class Meta():
-        db_table = 'status_mark'
+        db_table = 'book_status_mark'
     id = models.AutoField(primary_key=True)
     chapter_satus = models.CharField(max_length=50)
 
