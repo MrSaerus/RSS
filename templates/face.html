@@ -17,7 +17,7 @@
         <div class="top">
             <div class="menu_head" id="menu">
                 <div class="hc_drop_menu">
-                    <div class="hc_btn_drop buton_menu_r">Saerus</div>
+                    <div class="hc_btn_drop buton_menu_r">{% for user in username %}{{ user }}{% endfor %}</div>
 					<div class="hc_body_drop" style="left: 2px; top: 45px;">
 						<div class="hc_tre_drop" style="left: 6px;"></div>
 						<a href="index.php" class="buton_desktop_menu"><i class="fa fa-bars i_menu_l" aria-hidden="true"></i> Главная</a>
@@ -77,13 +77,13 @@
 							</div>
 							<div class="d-td">2020-06-17 10:51:25</div>
 						</div>
-                    {% for book in books %}
+                    {% for marks in booksmarks %}
                     <div class="d-tr read_color">
 							<div class="d-td">
 								<div class="hc_drop_menu" style="vertical-align: middle;">
 									<div class="hc_btn_drop book_buton" style="min-width: 335px; height: 35px; display: table-cell;">
 										<div style="display: inline-block; vertical-align: middle;"><img src="{% static 'images/ranobebook.com.ico' %}" style="vertical-align: middle;"></div>
-										<div style="width: 285px; display: inline-block; vertical-align: middle;"><div title="Сказания о демонах и богах" style="cursor:help;"><p>{{ book.title_russian }}</p></div></div>
+										<div style="width: 285px; display: inline-block; vertical-align: middle;"><div title="Сказания о демонах и богах" style="cursor:help;"><p>{{ marks.id_books }}</p></div></div>
 									</div>
 									<div class="hc_body_drop" style="left: 85px; top: 49px;">
 										<div class="hc_tre_drop" style="left: 92px;"></div>
@@ -96,12 +96,11 @@
 							</div>
 							<div class="d-td">
 								<div style="width: 250px; Display: block; margin: 0 auto; vertical-align:middle;">
-									<a href="https://ranobebook.com/book/skazaniia-o-demonakh-i-bogakh.10/chapter/glava-489-kto-eto.83819" target="_blank" class="buton_book_index" style="width: 250px; height: 35px;">{{ book.id_last_chapter }}</a>
-								</div>
+                                    <a href="https://ranobebook.com/book/skazaniia-o-demonakh-i-bogakh.10/chapter/glava-489-kto-eto.83819" target="_blank" class="buton_book_index" style="width: 250px; height: 35px;">{% for chap in chapters %}{{ chap }}{% endfor %}</a>
+                                </div>
 							</div>
 							<div class="d-td">
 								<div style="width: 250px; Display: block; margin: 0 auto; vertical-align:middle;">
-
 									<a href="index.php?config=read_book&amp;chapters=122" class="buton_book_index" style="width: 250px; height: 35px;">{{ book.id_last_chapter }}</a>
 								</div>
 							</div>
