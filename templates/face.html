@@ -20,27 +20,27 @@
                     <div class="hc_btn_drop buton_menu_r">{% for user in username %}{{ user }}{% endfor %}</div>
 					<div class="hc_body_drop" style="left: 2px; top: 45px;">
 						<div class="hc_tre_drop" style="left: 6px;"></div>
-						<a href="index.php" class="buton_desktop_menu"><i class="fa fa-bars i_menu_l" aria-hidden="true"></i> Главная</a>
-						<a href="index.php?preset_view=1" class="buton_desktop_menu"><i class="fa fa-play i_menu_l" aria-hidden="true"></i> Активное</a>
-						<a href="index.php?preset_view=2" class="buton_desktop_menu"><i class="fa fa-pause i_menu_l" aria-hidden="true"></i> Пауза</a>
-						<a href="index.php?preset_view=3" class="buton_desktop_menu"><i class="fa fa-forward i_menu_l" aria-hidden="true"></i>Будущее</a>
-						<a href="index.php?preset_view=5" class="buton_desktop_menu"><i class="fa fa-stop i_menu_l" aria-hidden="true"></i> Брошенное</a>
-						<a href="index.php?preset_view=4" class="buton_desktop_menu"><i class="fa fa-random i_menu_l" aria-hidden="true"></i> Все</a>
-						<a href="index.php?preset_view=custom" class="buton_desktop_menu"><i class="fa fa-play-circle-o i_menu_l" aria-hidden="true"></i> Свои закладки</a>
+						<a href="bookmarks" class="buton_desktop_menu"><i class="fa fa-bars i_menu_l" aria-hidden="true"></i> Главная</a>
+						<a href="bookmarks?preset_view=1" class="buton_desktop_menu"><i class="fa fa-play i_menu_l" aria-hidden="true"></i> Активное</a>
+						<a href="bookmarks?preset_view=2" class="buton_desktop_menu"><i class="fa fa-pause i_menu_l" aria-hidden="true"></i> Пауза</a>
+						<a href="bookmarks?preset_view=3" class="buton_desktop_menu"><i class="fa fa-forward i_menu_l" aria-hidden="true"></i>Будущее</a>
+						<a href="bookmarks?preset_view=5" class="buton_desktop_menu"><i class="fa fa-stop i_menu_l" aria-hidden="true"></i> Брошенное</a>
+						<a href="bookmarks?preset_view=4" class="buton_desktop_menu"><i class="fa fa-random i_menu_l" aria-hidden="true"></i> Все</a>
+						<a href="bookmarks?preset_view=custom" class="buton_desktop_menu"><i class="fa fa-play-circle-o i_menu_l" aria-hidden="true"></i> Свои закладки</a>
 					</div>
 				</div>
                 <div class="hc_drop_menu hc_drop_menu_r">
 						<div class="hc_btn_drop buton_menu_l">Настройки</div>
 						<div class="hc_body_drop" style="left: -27px; top: 45px;">
 							<div class="hc_tre_drop" style="left: 129px;"></div>
-							<a href="index.php?config=user&amp;profile=user" class="buton_desktop_menu">Пользователь <i class="fa fa-address-card-o i_menu_r" aria-hidden="true"></i></a>
-							<a href="index.php?config=user&amp;profile=theme" class="buton_desktop_menu">Темы <i class="fa fa-font i_menu_r" aria-hidden="true"></i></a>
-							<a href="index.php?config=user&amp;profile=bookmark" class="buton_desktop_menu">Закладки <i class="fa fa-bookmark-o i_menu_r" aria-hidden="true"></i></a>
-							<a href="index.php?config=user&amp;profile=custom_bookmark" class="buton_desktop_menu">Свои закладки <i class="fa fa-bookmark i_menu_r" aria-hidden="true"></i></a>
-							<a href="index.php?config=user&amp;profile=lybrary&amp;lybrary=readers" class="buton_desktop_menu">Библиотека книг <i class="fa fa-book i_menu_r" aria-hidden="true"></i></a>
-							<a href="index.php?config=user&amp;profile=stat" class="buton_desktop_menu">Статистика <i class="fa fa-bar-chart i_menu_r" aria-hidden="true"></i></a>
-							<a href="index.php?config=user" class="buton_desktop_menu">Все настройки <i class="fa fa-cog i_menu_r" aria-hidden="true"></i></a>
-							<a href="index.php?exit" class="buton_desktop_menu">Выход <i class="fa fa-sign-out i_menu_r" aria-hidden="true"></i></a>
+							<a href="bookmarks?config=user&amp;profile=user" class="buton_desktop_menu">Пользователь <i class="fa fa-address-card-o i_menu_r" aria-hidden="true"></i></a>
+							<a href="bookmarks?config=user&amp;profile=theme" class="buton_desktop_menu">Темы <i class="fa fa-font i_menu_r" aria-hidden="true"></i></a>
+							<a href="bookmarks?config=user&amp;profile=bookmark" class="buton_desktop_menu">Закладки <i class="fa fa-bookmark-o i_menu_r" aria-hidden="true"></i></a>
+							<a href="bookmarks?config=user&amp;profile=custom_bookmark" class="buton_desktop_menu">Свои закладки <i class="fa fa-bookmark i_menu_r" aria-hidden="true"></i></a>
+							<a href="bookmarks?config=user&amp;profile=lybrary&amp;lybrary=readers" class="buton_desktop_menu">Библиотека книг <i class="fa fa-book i_menu_r" aria-hidden="true"></i></a>
+							<a href="bookmarks?config=user&amp;profile=stat" class="buton_desktop_menu">Статистика <i class="fa fa-bar-chart i_menu_r" aria-hidden="true"></i></a>
+							<a href="bookmarks?config=user" class="buton_desktop_menu">Все настройки <i class="fa fa-cog i_menu_r" aria-hidden="true"></i></a>
+							<a href="bookmarks?exit" class="buton_desktop_menu">Выход <i class="fa fa-sign-out i_menu_r" aria-hidden="true"></i></a>
 						</div>
                 </div>
             </div>
@@ -48,63 +48,40 @@
         <div class="body">
             <div class="content">
                 <div class="d-table">
-                    <div class="d-tr read_new_color">
-							<div class="d-td">
-								<div class="hc_drop_menu" style="vertical-align: middle;">
-									<div class="hc_btn_drop book_buton" style="min-width: 335px; height: 35px; display: table-cell;">
-										<div style="display: inline-block; vertical-align: middle;"><img src="{% static 'images/ranobebook.com.ico' %}" style="vertical-align: middle;"></div>
-										<div style="width: 285px; display: inline-block; vertical-align: middle;"><div title="Вечная Воля" style="cursor:help;"><p>Вечная Воля</p></div></div>
-									</div>
-									<div class="hc_body_drop" style="left: 85px; top: 49px;">
-										<div class="hc_tre_drop" style="left: 92px;"></div>
-										<a href="https://ranobebook.com/book/vechnaia-volia.43" class="buton_tre_menu" target="_blank">Сайт читалки</a>
-										<a href="index.php?config=chapters&amp;profile=edit_chapter&amp;chapters=116" class="buton_tre_menu">Редактирование закладки</a>
-										<a href="index.php?update_read=116&amp;lread=85122&amp;book=43&amp;site=2" class="buton_tre_menu">Отметить как прочитанное</a>
-										<a href="index.php?config=del&amp;delete=116" class="buton_tre_menu">Удалить закладку</a>
-									</div>
-								</div>
-							</div>
-							<div class="d-td">
-								<div style="width: 250px; Display: block; margin: 0 auto; vertical-align:middle;">
-									<a href="https://ranobebook.com/book/vechnaia-volia.43/chapter/glava-1100-mne-nuzhno-ostavatsia-v-teni.85122" target="_blank" class="buton_book_index" style="width: 250px; height: 35px;">    Глава 1100. Мне нужно оставаться в тени </a>
-								</div>
-							</div>
-							<div class="d-td">
-								<div style="width: 250px; Display: block; margin: 0 auto; vertical-align:middle;">
-
-									<a href="index.php?config=read_book&amp;chapters=116" class="buton_book_index" style="width: 250px; height: 35px;">    Глава 955. Угрозы и произвол </a>
-								</div>
-							</div>
-							<div class="d-td">2020-06-17 10:51:25</div>
-						</div>
-                    {% for marks in booksmarks %}
+                    <div class="d-tr head_color">
+                        <div class="d-td"><div><b><a class="sort_a" href="bookmarks?sort=name&amp;t_sort=asc&amp;preset_view=1" style="margin-left: 35px;">Название </a></b></div></div>
+                        <div class="d-td"><div><b><a class="sort_a" href="bookmarks?sort=mark_new&amp;t_sort=asc&amp;preset_view=1">Новая глава </a></b></div></div>
+                        <div class="d-td"><div><b><a class="sort_a" href="bookmarks?sort=mark&amp;t_sort=asc&amp;preset_view=1">Закладка </a></b></div></div>
+                        <div class="d-td"><b><a class="sort_a" href="bookmarks?sort=date&amp;t_sort=asc&amp;preset_view=1">Дата публикации </a></b></div>
+                    </div>
+                    {% for BookMark in ShowBookMark %}
                     <div class="d-tr read_color">
 							<div class="d-td">
 								<div class="hc_drop_menu" style="vertical-align: middle;">
 									<div class="hc_btn_drop book_buton" style="min-width: 335px; height: 35px; display: table-cell;">
-										<div style="display: inline-block; vertical-align: middle;"><img src="{% static 'images/ranobebook.com.ico' %}" style="vertical-align: middle;"></div>
-										<div style="width: 285px; display: inline-block; vertical-align: middle;"><div title="Сказания о демонах и богах" style="cursor:help;"><p>{{ marks.id_books }}</p></div></div>
+										<div style="display: inline-block; vertical-align: middle;"><img src="{% static 'images/' %}{{ BookMark.id_site }}.ico" style="vertical-align: middle;"></div>
+										<div style="width: 285px; display: inline-block; vertical-align: middle;"><div title="Сказания о демонах и богах" style="cursor:help;"><p>{{ BookMark.id_books }}</p></div></div>
 									</div>
 									<div class="hc_body_drop" style="left: 85px; top: 49px;">
 										<div class="hc_tre_drop" style="left: 92px;"></div>
 										<a href="https://ranobebook.com/book/skazaniia-o-demonakh-i-bogakh.10" class="buton_tre_menu" target="_blank">Сайт читалки</a>
-										<a href="index.php?config=chapters&amp;profile=edit_chapter&amp;chapters=122" class="buton_tre_menu">Редактирование закладки</a>
-										<a href="index.php?update_read=122&amp;lread=83819&amp;book=10&amp;site=2" class="buton_tre_menu">Отметить как прочитанное</a>
-										<a href="index.php?config=del&amp;delete=122" class="buton_tre_menu">Удалить закладку</a>
+										<a href="index.php?config=chapters&amp;profile=edit_chapter&amp;chapters={{ BookMark.id_chapters }}" class="buton_tre_menu">Редактирование закладки</a>
+										<a href="index.php?update_read={{ BookMark.id }}&amp;lread=83819&amp;book={{ BookMark.id_books }}&amp;site={{ BookMark.id_site }}" class="buton_tre_menu">Отметить как прочитанное</a>
+										<a href="index.php?config=del&amp;delete={{ BookMark.id }}" class="buton_tre_menu">Удалить закладку</a>
 									</div>
 								</div>
 							</div>
 							<div class="d-td">
 								<div style="width: 250px; Display: block; margin: 0 auto; vertical-align:middle;">
-                                    <a href="https://ranobebook.com/book/skazaniia-o-demonakh-i-bogakh.10/chapter/glava-489-kto-eto.83819" target="_blank" class="buton_book_index" style="width: 250px; height: 35px;">{% for chap in chapters %}{{ chap }}{% endfor %}</a>
+                                    <a href="https://ranobebook.com/book/skazaniia-o-demonakh-i-bogakh.10/chapter/glava-489-kto-eto.83819" target="_blank" class="buton_book_index" style="width: 250px; height: 35px;">{{ BookMark.id_chapters }}</a>
                                 </div>
 							</div>
 							<div class="d-td">
 								<div style="width: 250px; Display: block; margin: 0 auto; vertical-align:middle;">
-									<a href="index.php?config=read_book&amp;chapters=122" class="buton_book_index" style="width: 250px; height: 35px;">{{ book.id_last_chapter }}</a>
+									<a href="index.php?config=read_book&amp;chapters={{ BookMark.id }}" class="buton_book_index" style="width: 250px; height: 35px;">{{ BookMark.id_chapters }}</a>
 								</div>
 							</div>
-							<div class="d-td">{{ book.date_update }}</div>
+							<div class="d-td">{{ BookMark.translate }}</div>
                     </div>
                    {% endfor %}
                 </div>

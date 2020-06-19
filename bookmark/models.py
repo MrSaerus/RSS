@@ -1,4 +1,5 @@
 from django.db import models
+from library.models import book_library
 
 class book_custom_mark(models.Model):
     class Meta():
@@ -17,6 +18,7 @@ class book_mark(models.Model):
     id = models.AutoField(primary_key=True)
     id_site = models.CharField(max_length=50)
     id_books = models.CharField(max_length=50)
+    #id_books = models.ManyToManyField(book_library)
     id_chapters = models.CharField(max_length=50)
     id_user = models.CharField(max_length=50)
     id_status = models.CharField(max_length=50)
