@@ -81,7 +81,7 @@
 									<a href="index.php?config=read_book&amp;chapters={{ BookMark.book_chapters.id }}" class="buton_book_index" style="width: 250px; height: 35px;">{{ BookMark.book_chapters.title_chapter }}</a>
 								</div>
 							</div>
-							<div class="d-td">{{ BookMark.date_update }}</div>
+							<div class="d-td">{{ BookMark.date_update | date:"D d M Y"}}</div>
                     </div>
                    {% endfor %}
                 </div>

@@ -2,7 +2,8 @@ from django.shortcuts import render
 from bookmark.models import book_mark
 from bookmark.models import book_library
 from bookmark.models import book_chapters
-import datetime
+from datetime import datetime
+
 def TempFunction(In):
     if In == 'TempIdUser':
         In = '1'
