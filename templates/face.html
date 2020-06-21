@@ -59,29 +59,29 @@
 							<div class="d-td">
 								<div class="hc_drop_menu" style="vertical-align: middle;">
 									<div class="hc_btn_drop book_buton" style="min-width: 335px; height: 35px; display: table-cell;">
-										<div style="display: inline-block; vertical-align: middle;"><img src="{% static 'images/' %}{{ BookMark.id_site }}.ico" style="vertical-align: middle;"></div>
-										<div style="width: 285px; display: inline-block; vertical-align: middle;"><div title="Сказания о демонах и богах" style="cursor:help;"><p>{{ BookMark.id_books }}</p></div></div>
+										<div style="display: inline-block; vertical-align: middle;"><img src="{% static 'images/' %}{{ BookMark.id }}.ico" style="vertical-align: middle;"></div>
+										<div style="width: 285px; display: inline-block; vertical-align: middle;"><div title="Сказания о демонах и богах" style="cursor:help;"><p>{{ BookMark.book_chapters.book.title_russian }}</p></div></div>
 									</div>
 									<div class="hc_body_drop" style="left: 85px; top: 49px;">
 										<div class="hc_tre_drop" style="left: 92px;"></div>
-										<a href="https://ranobebook.com/book/skazaniia-o-demonakh-i-bogakh.10" class="buton_tre_menu" target="_blank">Сайт читалки</a>
-										<a href="index.php?config=chapters&amp;profile=edit_chapter&amp;chapters={{ BookMark.id_chapters }}" class="buton_tre_menu">Редактирование закладки</a>
-										<a href="index.php?update_read={{ BookMark.id }}&amp;lread=83819&amp;book={{ BookMark.id_books }}&amp;site={{ BookMark.id_site }}" class="buton_tre_menu">Отметить как прочитанное</a>
+										<a href="{{ BookMark.book_chapters.book.url_site }}" class="buton_tre_menu" target="_blank">Сайт читалки</a>
+										<a href="index.php?config=chapters&amp;profile=edit_chapter&amp;chapters={{ BookMark.book_chapters.id }}" class="buton_tre_menu">Редактирование закладки</a>
+										<a href="index.php?update_read={{ BookMark.id }}&amp;lread=83819&amp;book={{ BookMark.book_chapters.book.id }}&amp;site={{ BookMark.id_site }}" class="buton_tre_menu">Отметить как прочитанное</a>
 										<a href="index.php?config=del&amp;delete={{ BookMark.id }}" class="buton_tre_menu">Удалить закладку</a>
 									</div>
 								</div>
 							</div>
 							<div class="d-td">
 								<div style="width: 250px; Display: block; margin: 0 auto; vertical-align:middle;">
-                                    <a href="https://ranobebook.com/book/skazaniia-o-demonakh-i-bogakh.10/chapter/glava-489-kto-eto.83819" target="_blank" class="buton_book_index" style="width: 250px; height: 35px;">{{ BookMark.id_chapters }}</a>
+                                    <a href="{{ BookMark.book_chapters.book.last_chapter.last_chapter_url }}" target="_blank" class="buton_book_index" style="width: 250px; height: 35px;">{{ BookMark.book_chapters.book.last_chapter.last_chapter_title }}</a>
                                 </div>
 							</div>
 							<div class="d-td">
 								<div style="width: 250px; Display: block; margin: 0 auto; vertical-align:middle;">
-									<a href="index.php?config=read_book&amp;chapters={{ BookMark.id }}" class="buton_book_index" style="width: 250px; height: 35px;">{{ BookMark.id_chapters }}</a>
+									<a href="index.php?config=read_book&amp;chapters={{ BookMark.book_chapters.id }}" class="buton_book_index" style="width: 250px; height: 35px;">{{ BookMark.book_chapters.title_chapter }}</a>
 								</div>
 							</div>
-							<div class="d-td">{{ BookMark.translate }}</div>
+							<div class="d-td">{{ BookMark.date_update }}</div>
                     </div>
                    {% endfor %}
                 </div>

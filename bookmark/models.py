@@ -13,19 +13,25 @@ class book_users(models.Model):
     date_create = models.DateTimeField()
 
 
+class book_last_chapter(models.Model):
+    class Meta:
+        db_table = 'book_last_chapter'
+    last_chapter_url = models.TextField()
+    last_chapter_title = models.TextField()
+    last_update = models.DateTimeField()
+
+
 class book_library(models.Model):
     class Meta:
         db_table = 'book_library'
-    site = models.TextField()
+    url_site = models.TextField()
     book_id = models.TextField()
     title_original = models.TextField()
     title_english = models.TextField()
     title_russian = models.TextField()
-    last_chapter = models.TextField()
     parse = models.TextField()
     extended_parse = models.TextField()
-    last_update = models.DateTimeField()
-
+    last_chapter = models.ForeignKey(book_last_chapter, on_delete=models.CASCADE)
 
 class book_chapters(models.Model):
     class Meta:
