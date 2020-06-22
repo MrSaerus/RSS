@@ -1,25 +1,25 @@
 from django.shortcuts import render
 from bookmark.models import book_mark
 from bookmark.models import book_users
-from bookmark.models import book_library
-from bookmark.models import book_chapters
-from datetime import datetime
+
 
 def TempFunction(In):
     if In == 'TempIdUser':
         In = '1'
         return In
 
-def getBookMarkUser(UserId, PresetId):
-    BookMarkUser = book_mark.objects.select_related().filter(id=UserId, status=PresetId)
+def getBookMarkUser(UserId, read):
+    if read == 'all':
+        BookMarkUser = book_mark.objects.select_related().filter(id=UserId)
+    else:
+        BookMarkUser = book_mark.objects.select_related().filter(id=UserId, status=read)
     return BookMarkUser
 
 def list_booksmarks(request):
     #нужно ограничить запрос GET
-    preset_view = request.GET.get("preset_view", 1)
+    preset_view = request.GET.get("preset_view", 'read')
     username = book_users.objects.values_list('l_user', flat=True).filter(id=TempFunction('TempIdUser'))
     ShowBookMark = getBookMarkUser(TempFunction('TempIdUser'), preset_view)
-    #ShowBookMark = book_mark.objects.all()
     return render(request, 'face.html', locals())
 
 

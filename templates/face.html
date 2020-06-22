@@ -1,4 +1,5 @@
 {% load static %}
+{% load tz %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -21,11 +22,11 @@
 					<div class="hc_body_drop" style="left: 2px; top: 45px;">
 						<div class="hc_tre_drop" style="left: 6px;"></div>
 						<a href="bookmarks" class="buton_desktop_menu"><i class="fa fa-bars i_menu_l" aria-hidden="true"></i> Главная</a>
-						<a href="bookmarks?preset_view=1" class="buton_desktop_menu"><i class="fa fa-play i_menu_l" aria-hidden="true"></i> Активное</a>
-						<a href="bookmarks?preset_view=2" class="buton_desktop_menu"><i class="fa fa-pause i_menu_l" aria-hidden="true"></i> Пауза</a>
-						<a href="bookmarks?preset_view=3" class="buton_desktop_menu"><i class="fa fa-forward i_menu_l" aria-hidden="true"></i>Будущее</a>
-						<a href="bookmarks?preset_view=5" class="buton_desktop_menu"><i class="fa fa-stop i_menu_l" aria-hidden="true"></i> Брошенное</a>
-						<a href="bookmarks?preset_view=4" class="buton_desktop_menu"><i class="fa fa-random i_menu_l" aria-hidden="true"></i> Все</a>
+						<a href="bookmarks?preset_view=read" class="buton_desktop_menu"><i class="fa fa-play i_menu_l" aria-hidden="true"></i> Активное</a>
+						<a href="bookmarks?preset_view=pause" class="buton_desktop_menu"><i class="fa fa-pause i_menu_l" aria-hidden="true"></i> Пауза</a>
+						<a href="bookmarks?preset_view=future" class="buton_desktop_menu"><i class="fa fa-forward i_menu_l" aria-hidden="true"></i>Будущее</a>
+						<a href="bookmarks?preset_view=dropped" class="buton_desktop_menu"><i class="fa fa-stop i_menu_l" aria-hidden="true"></i> Брошенное</a>
+						<a href="bookmarks?preset_view=all" class="buton_desktop_menu"><i class="fa fa-random i_menu_l" aria-hidden="true"></i> Все</a>
 						<a href="bookmarks?preset_view=custom" class="buton_desktop_menu"><i class="fa fa-play-circle-o i_menu_l" aria-hidden="true"></i> Свои закладки</a>
 					</div>
 				</div>
@@ -81,7 +82,7 @@
 									<a href="index.php?config=read_book&amp;chapters={{ BookMark.book_chapters.id }}" class="buton_book_index" style="width: 250px; height: 35px;">{{ BookMark.book_chapters.title_chapter }}</a>
 								</div>
 							</div>
-							<div class="d-td">{{ BookMark.date_update | date:"D d M Y"}}</div>
+							<div class="d-td">{{ BookMark.date_update}}</div>
                     </div>
                    {% endfor %}
                 </div>

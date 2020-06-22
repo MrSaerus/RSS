@@ -48,6 +48,6 @@ class book_mark(models.Model):
         db_table = 'book_mark'
     status = models.TextField()
     translate = models.TextField()
-    date_update = models.DateTimeField()
+    date_update = models.TextField()
     user = models.ForeignKey(book_users, on_delete=models.CASCADE)
     book_chapters = models.ForeignKey(book_chapters, on_delete=models.CASCADE)
