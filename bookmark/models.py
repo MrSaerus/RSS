@@ -24,6 +24,7 @@ class book_last_chapter(models.Model):
 class book_library(models.Model):
     class Meta:
         db_table = 'book_library'
+    id_site = models.IntegerField()
     url_site = models.TextField()
     book_id = models.TextField()
     title_original = models.TextField()

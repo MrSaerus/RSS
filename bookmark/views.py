@@ -6,9 +6,9 @@ from configuration.views import username_f
 
 def getBookMarkUser(UserId, read):
     if read == 'all':
-        BookMarkUser = book_mark.objects.select_related().filter(id=UserId)
+        BookMarkUser = book_mark.objects.select_related().filter(user_id=UserId)
     else:
-        BookMarkUser = book_mark.objects.select_related().filter(id=UserId, status=read)
+        BookMarkUser = book_mark.objects.select_related().filter(user_id=UserId, status=read)
     return BookMarkUser
 
 
@@ -17,6 +17,7 @@ def booksmark_page(request):
     username = username_f
     preset_view = request.GET.get("preset_view", 'read')
     ShowBookMark = getBookMarkUser(TempFunction('TempIdUser'), preset_view)
+    #ShowBookMark = book_mark.objects.all()
     return render(request, 'face.html', locals())
 
 
