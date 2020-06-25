@@ -1,12 +1,14 @@
 from django.conf.urls import url
-from RSS.views import show
-from bookmark.views import list_booksmarks
+from bookmark.views import booksmark_page
+from read.view import read_page
 
 
 urlpatterns = [
-    url(r'^index', show),
-    url(r'^index/', show),
-    url(r'^bookmarks', list_booksmarks),
-    url(r'^bookmarks/', list_booksmarks),
-    url(r'', show),
+    url(r'^index', booksmark_page),
+    url(r'^index/', booksmark_page),
+    url(r'^bookmarks', booksmark_page),
+    url(r'^bookmarks/', booksmark_page),
+    url(r'^read', read_page),
+    url(r'^read/', read_page),
+    url(r'^', booksmark_page),
 ]

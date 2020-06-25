@@ -19,6 +19,80 @@ a{
 img {
   width: 30px;
 }
+input[type="text"] {
+   border: 1px solid #cccccc; //цвет рамки
+   border-radius: 3px; //закругление углов (общее)
+   -webkit-border-radius: 3px; //закругление углов (Google Chrome)
+   -moz-border-radius: 3px; //закругление углов (FireFox)
+   -khtml-border-radius: 3px; //закругление углов (Safari)
+   background: #ffffff !important; // желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым
+   outline: none; // удаляет обводку в браузерах хром(желтая) и сафари(синяя)
+   height: 24px; // высота на свое усмотрение
+   width: 120px; // ширина на свое усмотрение
+   color: #cccccc; //цвет шрифта в обычном состоянии
+   font-size: 11px; // Размер шрифта
+   font-family: Tahoma; // Стиль шрифта
+}
+input[type="text"]:focus {
+  color: #000000;
+  border: 1px solid #000000
+}
+main {
+    padding: 10px 10px 0 10px;
+	display: block;
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    color: #737373;
+	display: block;
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+#content iframe {
+    border-width: 0px;
+    position: absolute;
+    width: 100%;
+    height: 88%;
+}
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+table.table-disblay-book td {
+	white-space:nowrap;
+	padding-top: 2px;
+}
+table.table-disblay-book {
+	width:100%;
+	text-align:center;
+}
+table.table-chapter-bookmark{
+	margin-top: 4px;
+}
+table {
+    border: 0; /* Рамка вокруг таблицы */
+    border-collapse: separate; /* Способ отображения границы */
+    width: 100%; /* Ширина таблицы */
+    border-spacing: 0 0; /* Расстояние между ячейками */
+	margin: 0;
+	padding: 0;
+   }
 .top{
 
 }
@@ -116,6 +190,26 @@ img {
 }
 .read_color {
     background-color: #ffffff40;
+}
+.buton_default {
+    color: #fff;
+    background: #d44b38;
+    text-decoration: none;
+    user-select: none;
+    padding: .7em 1.5em;
+    outline: none;
+    width: 300px;
+    height: 20px;
+    Display: table-cell;
+    vertical-align: middle;
+}
+a.buton_default {
+    color: #fff;
+    background: #d44b38;
+    text-decoration: none; /* убирать подчёркивание у ссылок */
+    user-select: none; /* убирать выделение текста */
+    padding: .7em 1.5em; /* отступ от текста */
+    outline: none; /* убирать контур в Mozilla */
 }
 a.buton_book_index {
     color: #000;

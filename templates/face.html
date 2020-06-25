@@ -21,13 +21,13 @@
                     <div class="hc_btn_drop buton_menu_r">{% for user in username %}{{ user }}{% endfor %}</div>
 					<div class="hc_body_drop" style="left: 2px; top: 45px;">
 						<div class="hc_tre_drop" style="left: 6px;"></div>
-						<a href="bookmarks" class="buton_desktop_menu"><i class="fa fa-bars i_menu_l" aria-hidden="true"></i> Главная</a>
-						<a href="bookmarks?preset_view=read" class="buton_desktop_menu"><i class="fa fa-play i_menu_l" aria-hidden="true"></i> Активное</a>
-						<a href="bookmarks?preset_view=pause" class="buton_desktop_menu"><i class="fa fa-pause i_menu_l" aria-hidden="true"></i> Пауза</a>
-						<a href="bookmarks?preset_view=future" class="buton_desktop_menu"><i class="fa fa-forward i_menu_l" aria-hidden="true"></i>Будущее</a>
-						<a href="bookmarks?preset_view=dropped" class="buton_desktop_menu"><i class="fa fa-stop i_menu_l" aria-hidden="true"></i> Брошенное</a>
-						<a href="bookmarks?preset_view=all" class="buton_desktop_menu"><i class="fa fa-random i_menu_l" aria-hidden="true"></i> Все</a>
-						<a href="bookmarks?preset_view=custom" class="buton_desktop_menu"><i class="fa fa-play-circle-o i_menu_l" aria-hidden="true"></i> Свои закладки</a>
+						<a href="bookmarks" class="buton_desktop_menu">Главная</a>
+						<a href="bookmarks?preset_view=read" class="buton_desktop_menu">Активное</a>
+						<a href="bookmarks?preset_view=pause" class="buton_desktop_menu">Пауза</a>
+						<a href="bookmarks?preset_view=future" class="buton_desktop_menu">Будущее</a>
+						<a href="bookmarks?preset_view=dropped" class="buton_desktop_menu">Брошенное</a>
+						<a href="bookmarks?preset_view=all" class="buton_desktop_menu">Все</a>
+						<a href="bookmarks?preset_view=custom" class="buton_desktop_menu">Свои закладки</a>
 					</div>
 				</div>
                 <div class="hc_drop_menu hc_drop_menu_r">
@@ -79,7 +79,7 @@
 							</div>
 							<div class="d-td">
 								<div style="width: 250px; Display: block; margin: 0 auto; vertical-align:middle;">
-									<a href="index.php?config=read_book&amp;chapters={{ BookMark.book_chapters.id }}" class="buton_book_index" style="width: 250px; height: 35px;">{{ BookMark.book_chapters.title_chapter }}</a>
+									<a href="read?book_chapters={{ BookMark.book_chapters.id }}&amp;bookmark={{ BookMark.id }}&amp;book={{ BookMark.book_chapters.book_id }}" class="buton_book_index" style="width: 250px; height: 35px;">{{ BookMark.book_chapters.title_chapter }}</a>
 								</div>
 							</div>
 							<div class="d-td">{{ BookMark.date_update}}</div>

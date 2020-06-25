@@ -1,12 +1,8 @@
 from django.shortcuts import render
 from bookmark.models import book_mark
-from bookmark.models import book_users
+from configuration.views import TempFunction
+from configuration.views import username_f
 
-
-def TempFunction(In):
-    if In == 'TempIdUser':
-        In = '1'
-        return In
 
 def getBookMarkUser(UserId, read):
     if read == 'all':
@@ -15,10 +11,11 @@ def getBookMarkUser(UserId, read):
         BookMarkUser = book_mark.objects.select_related().filter(id=UserId, status=read)
     return BookMarkUser
 
-def list_booksmarks(request):
+
+def booksmark_page(request):
     #нужно ограничить запрос GET
+    username = username_f
     preset_view = request.GET.get("preset_view", 'read')
-    username = book_users.objects.values_list('l_user', flat=True).filter(id=TempFunction('TempIdUser'))
     ShowBookMark = getBookMarkUser(TempFunction('TempIdUser'), preset_view)
     return render(request, 'face.html', locals())
 

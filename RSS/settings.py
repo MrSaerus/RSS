@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'library',
     'chapters',
     'bookmark',
+    'read',
 
 ]
 
