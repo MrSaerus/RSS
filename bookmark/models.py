@@ -34,6 +34,7 @@ class book_library(models.Model):
     extended_parse = models.TextField()
     last_chapter = models.ForeignKey(book_last_chapter, on_delete=models.CASCADE)
 
+
 class book_chapters(models.Model):
     class Meta:
         db_table = 'book_chapters'
@@ -49,6 +50,6 @@ class book_mark(models.Model):
         db_table = 'book_mark'
     status = models.TextField()
     translate = models.TextField()
-    date_update = models.TextField()
+    date_update = models.DateTimeField()
     user = models.ForeignKey(book_users, on_delete=models.CASCADE)
     book_chapters = models.ForeignKey(book_chapters, on_delete=models.CASCADE)
