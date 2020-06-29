@@ -1,0 +1,68 @@
+{% load static %}
+{% load tz %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="{% static 'js/menu.js' %}"></script>
+    <script src="{% static 'js/jquery.merhod.js' %}"></script>
+    <script src="{% static 'js/update_back.js' %}"></script>
+    <script src="{% static 'js/search.js' %}"></script>
+    <title>Читалка</title>
+</head>
+<body>
+<main>
+        <div class="top">
+            <div class="menu_head" id="menu">
+                <div class="hc_drop_menu">
+                    <div class="hc_btn_drop buton_menu_r">{% for user in username %}{{ user }}{% endfor %}</div>
+					<div class="hc_body_drop" style="left: 2px; top: 45px;">
+						<div class="hc_tre_drop" style="left: 6px;"></div>
+						<a href="bookmarks" class="buton_desktop_menu">Главная</a>
+						<a href="bookmarks?preset_view=read" class="buton_desktop_menu">Активное</a>
+						<a href="bookmarks?preset_view=pause" class="buton_desktop_menu">Пауза</a>
+						<a href="bookmarks?preset_view=future" class="buton_desktop_menu">Будущее</a>
+						<a href="bookmarks?preset_view=dropped" class="buton_desktop_menu">Брошенное</a>
+						<a href="bookmarks?preset_view=all" class="buton_desktop_menu">Все</a>
+						<a href="bookmarks?preset_view=custom" class="buton_desktop_menu">Свои закладки</a>
+					</div>
+				</div>
+                <div class="hc_drop_menu hc_drop_menu_r">
+						<div class="hc_btn_drop buton_menu_l">Настройки</div>
+						<div class="hc_body_drop" style="left: -27px; top: 45px;">
+							<div class="hc_tre_drop" style="left: 129px;"></div>
+							<a href="bookmarks?config=user&amp;profile=user" class="buton_desktop_menu">Пользователь <i class="fa fa-address-card-o i_menu_r" aria-hidden="true"></i></a>
+							<a href="bookmarks?config=user&amp;profile=theme" class="buton_desktop_menu">Темы <i class="fa fa-font i_menu_r" aria-hidden="true"></i></a>
+							<a href="bookmarks?config=user&amp;profile=bookmark" class="buton_desktop_menu">Закладки <i class="fa fa-bookmark-o i_menu_r" aria-hidden="true"></i></a>
+							<a href="bookmarks?config=user&amp;profile=custom_bookmark" class="buton_desktop_menu">Свои закладки <i class="fa fa-bookmark i_menu_r" aria-hidden="true"></i></a>
+							<a href="bookmarks?config=user&amp;profile=lybrary&amp;lybrary=readers" class="buton_desktop_menu">Библиотека книг <i class="fa fa-book i_menu_r" aria-hidden="true"></i></a>
+							<a href="bookmarks?config=user&amp;profile=stat" class="buton_desktop_menu">Статистика <i class="fa fa-bar-chart i_menu_r" aria-hidden="true"></i></a>
+							<a href="bookmarks?config=user" class="buton_desktop_menu">Все настройки <i class="fa fa-cog i_menu_r" aria-hidden="true"></i></a>
+							<a href="bookmarks?exit" class="buton_desktop_menu">Выход <i class="fa fa-sign-out i_menu_r" aria-hidden="true"></i></a>
+						</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: table; width: 100%; border-collapse: collapse; margin-top: 2px;">
+            <div class="d-tr" style=" background-color: #ffffff1a;">
+                <div class="d-td"><b>Название</b></div>
+                <div class="d-td"><b>Последняя вышедшая глава</b></div>
+                <div class="d-td"></div>
+            </div>
+            {% for lib in lyb_return %}
+            <div class="d-tr" style=" background-color: #ffffff1a;">
+                <div class="d-td"><a href="{{ lib.url_site }}" style="float: left; width: 83%;" class="buton_default"><img src="{% static 'images/' %}{{ lib.id_site }}.ico" style="float: left; margin-top: -6px;">{{ lib.title_russian }}</a></div>
+                <div class="d-td"><div title="{{ lib.last_chapter.last_chapter_url }}" style="cursor:help;"><p>{{ lib.last_chapter.last_chapter_title }}</p></div></div>
+                <div class="d-td"><a href="bookmark_add" class="buton_default" style="float: right; width: 75px;">Добавить</a></div>
+            </div>
+            {% endfor %}
+        </div>
+
+</main>
+<script src="{% static 'js/drop_menu.js' %}"></script>
+</body>
+</html>
